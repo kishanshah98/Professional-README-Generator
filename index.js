@@ -1,15 +1,69 @@
-// TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./Utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
-const questions = []
+const questions = [
+    {
+        type: 'input',
+        message: 'Enter project title.',
+        name: 'title',
+    },
+    {
+        type: 'input',
+        message: 'Write a short description that explains the what, why, and how of your project.',
+        name: 'description',
+    },
+    {
+        type: 'input',
+        message: 'What are the steps required to install your project?',
+        name: 'installation',
+    },
+    {
+        type: 'input',
+        message: 'Provide instructions and examples for use.',
+        name: 'usage',
+    },
+    {
+        type: 'input',
+        message: 'What are your contribution guidelines?',
+        name: 'contributions',
+    },
+    {
+        type: 'input',
+        message: 'What tests can you perform?',
+        name: 'tests'
+    },
+    {
+        type: 'list',
+        message: 'Provide your license.',
+        choices: ['Apache', 'MIT', 'GNU', 'Boost'],
+        name: 'license',
+    },
+    {
+        type: 'input',
+        message: 'Provide your github username for any questions.',
+        name: 'github',
+    },
+    {
+        type: 'input',
+        message: 'Provide your email for any questions.',
+        name: 'email',
+    }
+];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
-// TODO: Create a function to initialize app
-function init() {
-    
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(fileName, data);
 }
 
-// Function call to initialize app
+function init() {
+    inquirer
+        .prompt(questions)
+        .then(function (response) {
+            console.log(response);
+            const md = generateMarkdown({ ...response });
+            const fileName = response.title.split(" ").join("").toLowerCase() + ".md";
+            writeToFile(fileName, md);
+        })
+}
+
 init();
