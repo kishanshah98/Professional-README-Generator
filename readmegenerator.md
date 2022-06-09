@@ -1,21 +1,21 @@
 # README Generator
 ![License](https://img.shields.io/badge/license-Apache-green.png)
-this is the description
+This is the description of my README
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
-* [Collaborators](#collaborators)
+* [Contributions](#contributions)
 * [Tests](#tests)
 * [License](#license)
 * [Questions](#questions)
 ## Installation
-1, 2, 4, 5, 6
+download VS Code
 ## Usage
-1, 4, 5
-## Collaborators
-ds dfs  sdf 
+can use for any project to create readme file
+## Contributions
+
 ## Tests
-d
+
 ## License
 Apache
 ## Questions
