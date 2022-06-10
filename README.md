@@ -4,8 +4,8 @@ This application provides the user with several questions including the title, d
 
 ## Screenshot of sample README file created
 
-![Screenshot]()
+![Screenshot](./sample-readme-img.png)
 
 ## Link to Screencastify Walkthrough
 
-[Deployed link]()
+[Screencastify link](https://drive.google.com/file/d/1UmIXb2Wz2F7Ci3-VS4GCOOL8civI_tSg/view)
